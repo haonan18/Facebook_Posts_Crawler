@@ -9,12 +9,9 @@ def main():
     graph = fb.GraphAPI(access)
 
     fields = [
+        'id',
         'message',
         'created_time',
-        'description',
-        'caption',
-        'link',
-        'place',
         'status_type'
     ]
     fields = ','.join(fields)
@@ -22,7 +19,7 @@ def main():
 
     while True:
         try:
-            with open('posts.json1', 'a') as f:
+            with open('posts.txt', 'a') as f:
                 for post in posts['data']:
                     f.write(json.dumps(post)+"\n")
                 posts = requests.get(posts['paging']['next']).json()
