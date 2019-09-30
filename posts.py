@@ -2,7 +2,6 @@ import requests
 import json
 import csv
 import facebook as fb
-import networkx as nw
 
 def main():
 
